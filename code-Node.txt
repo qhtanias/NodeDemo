@@ -1,0 +1,11 @@
+cd newpwa
+ng new newpwa
+ng add @angular/pwanpa
+npm install -g http-server@0.9.0
+ng buid 
+cd dist/newpwa
+http-server -o
+ng generate component component-name
+
+mkdir hello
+mkdir My-dir
