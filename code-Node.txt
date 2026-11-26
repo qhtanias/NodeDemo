@@ -9,3 +9,94 @@ ng generate component component-name
 
 mkdir hello
 mkdir My-dir
+-------------------------
+var msg = "Hello, World!"
+console.log(msg);
+
+var obj ={
+    name:"John",
+    age:30,
+    city:"New York"
+
+}
+console.log(obj.name);
+console.log(obj.age);
+console.log(obj.city);
+
+-------------------
+function Display(x) {
+    console.log(x);
+}
+Display(100);
+
+========================
+// 1. Rename the variable to readlineSync to avoid conflicts
+const readline = require('readline');
+createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+    readline.question('Who are you? ', (name) => {
+        console.log(`Hello, ${name}!`);
+        readline.close();
+    });    
+
+    function DisplayMessage(x) {
+            
+    }    
+    
+// // 1. Rename the variable to readlineSync to avoid conflicts
+// const readlineSync = require('readline-sync');
+
+// // 2. Ask the question (readline-sync is synchronous, so no callbacks are needed)
+// const name = readlineSync.question('What is your name? ');
+
+// // 3. Print the result
+// console.log(`Hello, ${name}`);
+
+// // 4. Define the function
+// function DisplayMessage(x) {
+//     console.log(x);
+// }
+===================================
+var read = require('fs');
+var data = read.readFileSync('input.txt', 'utf8'); // Added 'utf8' for cleaner reading
+console.log(data.toString());
+console.log(" done");
+===================================
+var h1 = require('http');
+var h2 = h1.createServer(function(req, res){
+    console.log('Server is running');
+
+});
+//Server.listen(5000);
+====================================
+const http = require('http');
+
+const options = {
+    host: '127.0.0.1',
+    port: 8000,
+    path: '/length_request'
+};
+//make a request 
+const req = http.request(options);
+
+req.on('information', (info) => {
+    console.log(`Got the information to
+    main response: ${info.statusCode}`)
+});
+
+req.end();
+=====================================
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+    if (req.url === '/') {
+        res.write('<h1>Hello, Node.js!</h1>');
+    }
+    res.end();
+});
+
+server.listen(5000);
+console.log('The HTTP Server is running on port 5000');
+===============================
