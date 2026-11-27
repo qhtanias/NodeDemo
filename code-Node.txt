@@ -113,15 +113,17 @@ console.log(qdata.month);
 
 ===============================
 var http = require('http');
-var url = require('url')
+const { URL } = require('url');
 
-http.createServer(function (req, res){
-    var queryString = url.parse(req.url, true)
-    ;
-    queryString.href = "www.customway.com/abc.html";
+http.createServer(function (req, res) {
 
-console.log("Complete href is - " + queryString.href);
+    // var queryString = url.parse(req.url, true);
+    const queryString = new URL('https://www.customway.com:11/c#corner');
+    // Prints the host
+    console.log("Host is :-"+queryString.host);
+    
+    // Prints the host name
+    console.log("Host name is :-"+queryString.hostname);
 
-
-}).listen(5000);
+}).listen(4200);
 ================================
